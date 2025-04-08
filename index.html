@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Газонокосильщик — Калифорния, 1992</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+      background: url('bg.jpg') no-repeat center center;
+      background-size: cover;
+      color: #222;
+    }
+    .vhs-loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      color: lime;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      z-index: 9999;
+    }
+    .radio-btn {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      z-index: 10000;
+    }
+    .content {
+      text-align: center;
+      padding: 3rem 1rem;
+      backdrop-filter: blur(3px);
+    }
+    .cover {
+      max-width: 280px;
+      margin: 0 auto 1rem;
+    }
+    .cta {
+      margin: 1rem 0;
+    }
+    .cta a {
+      background: #ff6600;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+    }
+    .annotation {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      background: rgba(255,255,255,0.85);
+      padding: 1rem;
+      border-radius: 12px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .polaroid {
+      background: white;
+      padding: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      width: 200px;
+      transform: rotate(var(--r, 0deg));
+      position: relative;
+    }
+    .polaroid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .polaroid p {
+      font-family: 'Trebuchet MS', sans-serif;
+      font-size: 1rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .chat-box {
+      max-width: 500px;
+      margin: 3rem auto;
+      background: rgba(255,255,255,0.9);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .chat-box h3 {
+      margin-top: 0;
+    }
+    .chat-box textarea, .chat-box input {
+      width: 100%;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+    }
+    .chat-box .messages {
+      max-height: 200px;
+      overflow-y: auto;
+      background: #f0f0f0;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+    blockquote {
+      font-style: italic;
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.85);
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body onload="setTimeout(()=>{document.querySelector('.vhs-loader').style.display='none'}, 2000)">
+  <div class="vhs-loader">
+    <div>▶ PLAY</div>
+    <div style="font-size: 1rem;">Tracking... 00:00:00</div>
+  </div>
+
+  <button class="radio-btn" onclick="playRadio()">📻 Врубить радио</button>
+  <audio id="track1" src="track1.mp3"></audio>
+  <audio id="track2" src="track2.mp3"></audio>
+  <audio id="track3" src="track3.mp3"></audio>
+  <audio id="track4" src="track4.mp3"></audio>
+  <audio id="track5" src="track5.mp3"></audio>
+
+  <div class="content">
+    <div class="cover"><img src="cover.png" alt="Обложка" style="width:100%"></div>
+
+    <div class="cta"><a href="https://author.today/work/424156" target="_blank">Читать на Author.Today</a></div>
+
+    <div class="annotation">
+      Он проснулся в прошлом — в Калифорнии девяностых. Солнце, рок-н-ролл, VHS-магнитофоны и второй шанс.<br/>
+      Вопрос только один — как прожить эту жизнь заново?
+    </div>
+
+    <div class="gallery">
+      <div class="polaroid" style="--r:-2deg;"><img src="photo1.jpg"><p>Мишель Хадсон</p></div>
+      <div class="polaroid" style="--r:3deg;"><img src="photo2.jpg"><p>Ghoti это рыба? Что за Fuck?!</p></div>
+      <div class="polaroid" style="--r:-4deg;"><img src="photo3.jpg"><p>Ваши документы, мисс Вальдес...</p></div>
+      <div class="polaroid" style="--r:2deg;"><img src="photo4.jpg"><p>Чёрт! Новая работа?!</p></div>
+      <div class="polaroid" style="--r:1deg;"><img src="photo5.jpg"><p>Да уж... Лос-Анджелес 90-х...</p></div>
+      <div class="polaroid" style="--r:-3deg;"><img src="photo6.jpg"><p>У меня есть идея!</p></div>
+      <div class="polaroid" style="--r:1deg;"><img src="photo7.jpg"><p>Лучшая радиоведущая ЛА</p></div>
+      <div class="polaroid" style="--r:-1deg;"><img src="photo8.jpg"><p>Дерьмо! Джимми за это ответит!</p></div>
+      <div class="polaroid" style="--r:2deg;"><img src="photo9.jpg"><p>California Dreamin’</p></div>
+      <div class="polaroid" style="--r:-2deg;"><img src="photo10.jpg"><p>Назад в 1992</p></div>
+      <div class="polaroid" style="--r:3deg;"><img src="photo11.jpg"><p>Здесь нет Wi-Fi, но есть свобода</p></div>
+      <div class="polaroid" style="--r:-4deg;"><img src="photo12.jpg"><p>Калифорния зовёт</p></div>
+    </div>
+
+    <blockquote>
+🎙️ – Доброе утро, дорогие слушатели! С вами Radio California FM!<br/>
+🎙️ – Сегодня на календаре у нас 29 февраля 1992 года – редкий день, друзья, так что наслаждайтесь им по полной!<br/>
+🎙️ – А за окном… ммм, серость и туман. Ну, чего ещё ждать от самого дождливого месяца в году? Но не переживайте, он наконец-то заканчивается! Анжелика, ты рада?<br/>
+🎙️ – Ох, Джеф, ты даже не представляешь, КАК рада! Я уже и купальник приготовила, и крем для загара…<br/>
+🎙️ – Купальник? Хм…<br/>
+🎙️ – Угу! Такой маленький, скромный мини-бикини…<br/>
+🎙️ – Ого! Теперь захотелось увидеть, как ты его примеряешь!<br/>
+🎙️ – Ага, мечтай, Джеф!<br/>
+🎙️ – Кстати, погодка налаживается: сегодня синоптики обещают нам солнце во второй половине дня и целых 68 градусов по Фаренгейту! Так что, Анжелика, может, я ещё и увижу тебя в бикини наяву.<br/>
+🎙️ – Ну уж нет, Джеф, тебе остаётся только воображать!<br/>
+🎙️ – Жаль… Очень жаль… Ну а теперь – немного рекламы от нашего спонсора.<br/>
+🎶 "Устали от пробок? Вас раздражают медленные водители? Тогда вам нужен новый Chevrolet Camaro 1992 года! Мощность, скорость и стиль – всё, что нужно настоящему калифорнийцу! Загляните в дилерский центр "Sunset Motors" на Вентура-Бульвар и заберите свою мечту уже сегодня!" 
+    </blockquote>
+
+    <div class="chat-box">
+      <h3>💬 Оставь комментарий</h3>
+      <input type="text" id="name" placeholder="Имя (можно анонимно)">
+      <textarea id="message" placeholder="Сообщение..."></textarea>
+      <button onclick="addMessage()">Отправить</button>
+      <div class="messages" id="chat"></div>
+    </div>
+  </div>
+
+  <script>
+    function playRadio() {
+      const tracks = [
+        document.getElementById('track1'),
+        document.getElementById('track2'),
+        document.getElementById('track3'),
+        document.getElementById('track4'),
+        document.getElementById('track5')
+      ];
+      let current = 0;
+      const playNext = () => {
+        if (current < tracks.length) {
+          tracks[current].play();
+          tracks[current].onended = () => {
+            current++;
+            playNext();
+          };
+        }
+      };
+      playNext();
+    }
+
+    function addMessage() {
+      const name = document.getElementById('name').value || "Аноним";
+      const msg = document.getElementById('message').value;
+      if (msg.trim() === "") return;
+      const chat = document.getElementById('chat');
+      const entry = document.createElement('div');
+      entry.innerHTML = `<strong>${name}:</strong> ${msg}`;
+      chat.appendChild(entry);
+      document.getElementById('message').value = "";
+    }
+  </script>
+</body>
+</html>
